@@ -1,0 +1,176 @@
+.like{
+    background-image: url('like.png');
+    width:20px;
+    height:22px;
+    background-size: 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color:transparent;
+    border:none;
+    margin-left:40%;
+}
+
+.comment{
+    background-image: url('comment.png');
+    width:25px;
+    height:22px;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color:transparent;
+    border:none;
+}
+
+
+li{
+    list-style: none;
+}
+
+header{
+    clear:both;
+    float:left;
+    margin-top:2%;
+    margin-bottom:4%;
+}
+
+header img{
+width:15%;
+float:left;
+margin:.5%;
+}
+
+.rightHead{
+    float:right;
+    width:30%;
+    margin:1%;
+}
+
+.circle{
+    border:1px solid black;
+    width:15%;    
+    float:right;
+    margin:0;
+    background-color: #3897f0;
+    margin-right:3.5%;
+    box-shadow: 2px 4px 4px rgba(33,33,33,.7);
+    border-radius: 5px;
+    text-align: center;
+    color:white; 
+    padding:5px;
+} 
+
+.postTitle{
+    width:100%;
+}
+
+.leftHead{
+    width:30%;
+    border:2px solid red;
+}
+
+.circle a{
+    text-decoration:none;
+    color:white;
+}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width:35%;
+    margin-left:20%;
+  }
+  .cap {
+      margin-bottom:5px;
+  }
+
+  .dropdown-content {
+    padding:30px;
+    display: none;
+    position: absolute;
+    background-color: #e7e7e7;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+
+.posts{
+border:15px solid rgb(241, 241, 241);
+width:50%;
+clear:both;
+margin:auto;
+}
+
+.feedImg{
+    width:80%;
+    overflow: hidden;
+    margin-top:2%;
+    margin-bottom:-3%;
+}
+
+ul .post{
+    text-align: center;
+    margin-bottom:4%;
+    width:100%;
+    margin-left:-6%;
+    padding:10px;
+}
+
+body{
+    width:85%;
+    margin:auto;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.postUsername{
+    margin:2%;
+    text-decoration: none;
+    color:rgb(50, 50, 50);
+    font-weight: 900;
+    font-size:25px;
+}
+
+.postCap{
+    font-weight: 400;
+}
+
+.buttons{
+    clear:both;
+    height:35px;
+
+}
+
+.like, 
+.buttons span,
+.comment{
+    float:left;
+    margin-right:2%;
+}
+
+.like:hover,
+.comment:hover{
+    transform: scale(1.1);
+}
+
+.like:hover,
+.comment:hover{
+    transform: scale(0.7);
+}
+
+.post{
+    border-bottom: 10px solid rgba(28, 28, 28, 0.062);
+}
+
+.view{
+    text-decoration: none;
+    color:rgb(91, 91, 91);
+}

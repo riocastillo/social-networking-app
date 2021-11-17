@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="profile.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="profile">
+        <div class="profile-image">
+          <img src="manny.jpg" width=150px alt="">
+        </div>
+        <div class="profile-user-settings">
+          <h1 class="profile-user-name"><%=user.local.username %></h1>
+          <button class="btn profile-edit-btn"><a href="/logout" class="a">Log out</button></a>
+          <button class="btn profile-edit-btn"><a href="/feed" class="a">Back to feed</button></a>
+
+        </div>
+        <div class="profile-bio">
+          <p>
+            <span class="profile-real-name">Manny</span>
+            Lorem Ipsum dolor sit amet consectetur adipiscing 🏕️
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+      
+      <div class="gallery">
+        <% for(var i=0; i<posts.length; i++) {%>
+
+        <div class="gallery-item" tabindex="0">
+          <img src="<%= posts[i].img %>" class="gallery-image" alt="">
+          <div class="gallery-item-info">
+            <ul>
+              <li class="gallery-item-likes"><span class="visually-hidden">Likes: </span>
+                <i class="fas fa-heart" aria-hidden="true"></i> <%= posts[i].like %>
+              </li>
+              <li class="gallery-item-comments">
+                <span class="visually-hidden">Comments:</span>
+                <i class="fas fa-comment" aria-hidden="true"></i> <%= posts[i].comment ? posts[i].comment.length : 0 %> 
+              </li>
+            </ul>
+          </div>
+          
+        </div> 
+        <% } %>
+
+      
+
+      <!-- <div class="loader"></div> -->
+
+    </div>
+
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

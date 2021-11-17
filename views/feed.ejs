@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Feed Page</title>
+  <link rel="stylesheet" href="feed.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.png" class="logo">
+    <section class="rightHead">
+      <div class="dropdown">
+        <p class="circle postTitle dropbtn">Post to the feed</p>
+        <div class="dropdown-content">
+          <form action="/makePost" enctype="multipart/form-data" method="POST">
+            <input type="text" name="caption" class="cap" placeholder="your caption"></a>
+            <input type="file" class="cap" name="file-to-upload">
+            <button class="postIt" type="submit">Post</button>
+          </form>
+
+        </div>
+      </div>
+      <p class="circle"><a href="/profile">Profile</a></p>
+      <p class="circle"><a href="/logout">Logout</a></p><br><br>
+    </section>
+  </header>
+
+  <ul class="posts"> 
+    <% for(var i=0; i<posts.length; i++) {%>
+      <li class="post">
+        <section>
+          <a class="postUsername" href="/page/<%= posts[i].postedBy %>">
+            <%= posts[i].postedBy %>
+          </a>
+        </section>
+        <section> 
+          <a href="/post/<%= posts[i]._id %>">
+            <img src="<%= posts[i].img %>" class="feedImg" data-value="<%=posts[i]._id %>" alt="">
+          </a>
+        </section>
+        <section>
+          <h4 class="postCap">
+            <%= posts[i].caption %>
+          </h4>
+        </section>
+        <section class="buttons">
+          <button class="like" data-value="<%=posts[i]._id %>"></button>
+          <span>
+            <%= posts[i].like %>
+          </span>
+          <a href="/post/<%= posts[i]._id %>"><button class="comment"></button></a>
+          <span>
+            <%=posts[i].comment.length %>
+          </span>
+        </section>
+        <a class="view" href="/post/<%= posts[i]._id %>"><span class="view">view all comments...</span> </a>
+
+        <%# View Comments %>
+          <ul>
+            <% for(var j=0; j<posts[i].comment.length; j++) {%>
+              <li>
+                <p>
+                </p>
+              </li>
+              <% } %>
+          </ul>
+
+      </li>
+      <% } %>
+
+        <!-- <div class="loader"></div> -->
+
+  </ul>
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

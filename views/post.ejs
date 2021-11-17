@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>post page</title>
+  <link rel="stylesheet" href="/post.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <a href="/profile" class="nav">Profile</a><br><br>
+  <a href="/feed" class="nav">Feed</a><br><br>
+  <a href="/logout" class="nav">Logout</a>
+
+
+  <ul class="post">
+    <% for(var i=0; i<posts.length; i++) {%>
+      <li class="postItems">
+
+        <section class="left">
+          <img src="../<%= posts[i].img %>" class="image" alt="">
+        </section>
+
+        <section class="right">
+          <h1 class="username">
+            <%= posts[i].postedBy %>
+          </h1>
+          <%# Image Header %>
+            <% if (posts[i].caption.length==0) { %>
+              <h4>Nothing</h4>
+              <% } else { %>
+                <h4 class="caption">
+                  <%= posts[i].caption %>
+                </h4>
+                <% } %>
+                  <button class="like" data-value="<%=posts[i]._id %>"></button>
+                  <span>
+                    <%= posts[i].like %>
+                  </span>
+                  <button class="comment"></button>
+                  <span>
+                    <%=posts[i].comment.length %>
+                  </span>
+                  <section class="comments">
+                    <ul>
+                      <% for(var j=0; j<posts[i].comment.length; j++) {%>
+                        <li>
+                          <p>
+                            <%= posts[i].comment[j].comment %>
+                          </p>
+                        </li>
+                        <% } %>
+                    </ul>
+                    <%# Post Comment %>
+
+      </li>
+      <section class="write">
+        <button class="like" data-value="<%=posts[i]._id %>"></button>
+        <input class="userComment" type="text" placeholder="write a comment...">
+        <button type="submit" class="sendComment" data-value="<%=posts[i]._id %>">post</button>
+      </section>
+     
+        </section>
+  </ul>
+ 
+  </section>
+  <% } %>
+
+  <script src="/main.js"></script>
+
+</body>
+
+</html> 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sign up page</title>
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass+Mono" rel="stylesheet">
+</head>
+<style>
+  .main-content{
+    height:325px;
+    margin: 30px auto;
+
+  }
+</style> 
+
+<body>
+
+      <div id="wrapper">
+        <div class="main-content">
+          <div class="header">
+            <img src="https://i.imgur.com/zqpwkLQ.png" />
+          </div>
+          <form action="/signup" method="post">
+            <div class="l-part">
+              <input type="text" placeholder="email" name="email" class="input-1" />
+              <input type="text" placeholder="Username" name="username" class="input-1" />
+              <div class="overlap-text">
+                <input type="password" placeholder="Password" name="password" class="input-2" />
+              </div>
+              <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+            </div>
+          </form>
+
+        </div>
+
+
+        <div class="sub-content">
+          <div class="s-part">
+            Already have an account?<a href="/login">Login</a>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>
